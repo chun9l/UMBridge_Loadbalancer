@@ -29,16 +29,6 @@ def count_active_jobs(process_ids):
     # Return number of active jobs and new list of active ids
     return len(new_ids), new_ids
 
-def check_finished(process_ids):
-    """
-    Checks that all runs have finished.
-    """
-
-    number_active, active_job_ids = count_active_jobs(process_ids)
-    if number_active > 0:
-        return False
-    else:
-        return True
 
 def can_run_job(process_ids, max_jobs):
     """
@@ -53,21 +43,6 @@ def can_run_job(process_ids, max_jobs):
     return True
 
 # 'PUBLIC' Functions ==============================
-
-def wait_until_finished(process_ids, wait_time=60):
-    """
-    Just waits until all instances of a job have
-    completed.
-    """
-
-    while True:
-
-        finished = check_finished(process_ids)
-        if not finished:
-            print('Jobs are still running!')
-            time.sleep(wait_time)
-        else:
-            return
 
 def submit_batch_job(run_directory, file_name, settings):
     """
