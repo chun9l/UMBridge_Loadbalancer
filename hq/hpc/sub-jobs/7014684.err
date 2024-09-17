@@ -1,0 +1,3 @@
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'pyhton'
+[33m18:12:24 [WARNING] Python module 'omas' not found. Submodule 'jams' needs it @jams.py:14[0m
+slurmstepd: error: *** JOB 7014684 ON cn005 CANCELLED AT 2023-12-14T18:21:10 DUE TO TIME LIMIT ***

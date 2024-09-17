@@ -1,0 +1,16 @@
+172.18.10.73
+65039
+Waiting for model server to respond at 172.18.10.73:65039...
+Model server responded
+ Created by GS2 at 2024-08-21T15:45:53.322Z+01:00
+ GS2 version: 8.1.2
+ Run UUID: 33215F7C-0752-4F2D-AB28-484B6A7E7156
+ GK_SYSTEM: gnu_ubuntu
+ Compiler: gfortran
+
+Running on 32 processors
+
+ r_bar =   0.67000000000000026     
+
+ d beta/d rho =    0.0000000000000000      ,  -0.64000000000000001     
+ s_hat    19.466547423593777      ,    3.1173933836235315     

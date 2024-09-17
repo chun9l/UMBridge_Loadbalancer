@@ -1,0 +1,191 @@
+2024-08-21T08:34:02Z INFO No online server found, starting a new server
+2024-08-21T08:34:02Z INFO Storing access file as '/home/mghw54/.hq-server/322/access.json'
++------------------+-------------------------------------------------------------+
+| Server directory | /home/mghw54/.hq-server                                     |
+| Server UID       | WcVWKQ                                                      |
+| Client host      | login1.ham8.dur.ac.uk                                       |
+| Client port      | 34493                                                       |
+| Worker host      | login1.ham8.dur.ac.uk                                       |
+| Worker port      | 37431                                                       |
+| Version          | nightly-2024-08-19-a49ef4a3870b2e3a0f1b3364c6ba36dff2d1b5d9 |
+| Pid              | 303542                                                      |
+| Start date       | 2024-08-21 08:34:02 UTC                                     |
++------------------+-------------------------------------------------------------+
+thread 'main' panicked at /__w/hyperqueue/hyperqueue/crates/hyperqueue/src/server/bootstrap.rs:354:26:
+Invalid response: Error(ErrorResponse { message: "Task submission is empty" })
+stack backtrace:
+   0:     0x55b2509c9239 - std::backtrace_rs::backtrace::libunwind::trace::hbee8a7973eeb6c93
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/../../backtrace/src/backtrace/libunwind.rs:104:5
+   1:     0x55b2509c9239 - std::backtrace_rs::backtrace::trace_unsynchronized::hc8ac75eea3aa6899
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/../../backtrace/src/backtrace/mod.rs:66:5
+   2:     0x55b2509c9239 - std::sys_common::backtrace::_print_fmt::hc7f3e3b5298b1083
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/sys_common/backtrace.rs:68:5
+   3:     0x55b2509c9239 - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::hbb235daedd7c6190
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/sys_common/backtrace.rs:44:22
+   4:     0x55b250712d20 - core::fmt::rt::Argument::fmt::h76c38a80d925a410
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/core/src/fmt/rt.rs:142:9
+   5:     0x55b250712d20 - core::fmt::write::h3ed6aeaa977c8e45
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/core/src/fmt/mod.rs:1120:17
+   6:     0x55b250991ebe - std::io::Write::write_fmt::h78b18af5775fedb5
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/io/mod.rs:1810:15
+   7:     0x55b2509cb26e - std::sys_common::backtrace::_print::h5d645a07e0fcfdbb
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/sys_common/backtrace.rs:47:5
+   8:     0x55b2509cb26e - std::sys_common::backtrace::print::h85035a511aafe7a8
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/sys_common/backtrace.rs:34:9
+   9:     0x55b2509cab17 - std::panicking::default_hook::{{closure}}::hcce8cea212785a25
+  10:     0x55b2509ca6ff - std::panicking::default_hook::hf5fcb0f213fe709a
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/panicking.rs:292:9
+  11:     0x55b25067aabb - call<(&core::panic::panic_info::PanicInfo), (dyn core::ops::function::Fn<(&core::panic::panic_info::PanicInfo), Output=()> + core::marker::Send + core::marker::Sync), alloc::alloc::Global>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/alloc/src/boxed.rs:2029:9
+  12:     0x55b25067aabb - {closure#0}
+                               at /__w/hyperqueue/hyperqueue/crates/hyperqueue/src/bin/hq.rs:360:9
+  13:     0x55b2509cb85a - <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call::hbc5ccf4eb663e1e5
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/alloc/src/boxed.rs:2029:9
+  14:     0x55b2509cb85a - std::panicking::rust_panic_with_hook::h095fccf1dc9379ee
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/panicking.rs:783:13
+  15:     0x55b2509cb5e0 - std::panicking::begin_panic_handler::{{closure}}::h032ba12139b353db
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/panicking.rs:657:13
+  16:     0x55b2509cb536 - std::sys_common::backtrace::__rust_end_short_backtrace::h9259bc2ff8fd0f76
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/sys_common/backtrace.rs:171:18
+  17:     0x55b2509cb52f - rust_begin_unwind
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/panicking.rs:645:5
+  18:     0x55b250555444 - core::panicking::panic_fmt::h784f20a50eaab275
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/core/src/panicking.rs:72:14
+  19:     0x55b2506446f3 - {async_block#4}
+                               at /__w/hyperqueue/hyperqueue/crates/hyperqueue/src/server/bootstrap.rs:354:26
+  20:     0x55b2506446f3 - {closure#0}<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/task/core.rs:328:17
+  21:     0x55b2506446f3 - with_mut<tokio::runtime::task::core::Stage<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}>, core::task::poll::Poll<()>, tokio::runtime::task::core::{impl#6}::poll::{closure_env#0}<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/loom/std/unsafe_cell.rs:16:9
+  22:     0x55b2506446f3 - poll<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/task/core.rs:317:30
+  23:     0x55b2506446f3 - {closure#0}<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/task/harness.rs:485:19
+  24:     0x55b2506446f3 - call_once<core::task::poll::Poll<()>, tokio::runtime::task::harness::poll_future::{closure_env#0}<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/core/src/panic/unwind_safe.rs:272:9
+  25:     0x55b2506446f3 - do_call<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>>, core::task::poll::Poll<()>>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/panicking.rs:552:40
+  26:     0x55b2506446f3 - try<core::task::poll::Poll<()>, core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>>>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/panicking.rs:516:19
+  27:     0x55b2506446f3 - catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>>, core::task::poll::Poll<()>>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/panic.rs:142:14
+  28:     0x55b2506446f3 - poll_future<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/task/harness.rs:473:18
+  29:     0x55b2506446f3 - poll_inner<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/task/harness.rs:208:27
+  30:     0x55b2506446f3 - poll<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/task/harness.rs:153:15
+  31:     0x55b2506446f3 - poll<hyperqueue::server::bootstrap::start_server::{async_fn#0}::{async_block_env#4}, alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/task/raw.rs:271:5
+  32:     0x55b250a33ab9 - poll
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/task/raw.rs:201:18
+  33:     0x55b250a33ab9 - run<alloc::sync::Arc<tokio::task::local::Shared, alloc::alloc::Global>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/task/mod.rs:427:9
+  34:     0x55b250a33ab9 - {closure#0}
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/task/local.rs:676:68
+  35:     0x55b250a33ab9 - with_budget<(), tokio::task::local::{impl#4}::tick::{closure_env#0}>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/coop.rs:107:5
+  36:     0x55b250a33ab9 - budget<(), tokio::task::local::{impl#4}::tick::{closure_env#0}>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/coop.rs:73:5
+  37:     0x55b250a33ab9 - tick
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/task/local.rs:676:31
+  38:     0x55b2505cd6cc - {closure#0}<hyperqueue::server::bootstrap::initialize_server::{async_fn#0}::{async_block_env#4}>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/task/local.rs:982:16
+  39:     0x55b2505cd6cc - {closure#0}<core::task::poll::Poll<core::result::Result<(), anyhow::Error>>, tokio::task::local::{impl#10}::poll::{closure_env#0}<hyperqueue::server::bootstrap::initialize_server::{async_fn#0}::{async_block_env#4}>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/task/local.rs:730:13
+  40:     0x55b2505cd6cc - try_with<tokio::task::local::LocalData, tokio::task::local::{impl#4}::with::{closure_env#0}<core::task::poll::Poll<core::result::Result<(), anyhow::Error>>, tokio::task::local::{impl#10}::poll::{closure_env#0}<hyperqueue::server::bootstrap::initialize_server::{async_fn#0}::{async_block_env#4}>>, core::task::poll::Poll<core::result::Result<(), anyhow::Error>>>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/thread/local.rs:270:16
+  41:     0x55b2505cd6cc - with<tokio::task::local::LocalData, tokio::task::local::{impl#4}::with::{closure_env#0}<core::task::poll::Poll<core::result::Result<(), anyhow::Error>>, tokio::task::local::{impl#10}::poll::{closure_env#0}<hyperqueue::server::bootstrap::initialize_server::{async_fn#0}::{async_block_env#4}>>, core::task::poll::Poll<core::result::Result<(), anyhow::Error>>>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/thread/local.rs:246:9
+  42:     0x55b2505cd6cc - with<core::task::poll::Poll<core::result::Result<(), anyhow::Error>>, tokio::task::local::{impl#10}::poll::{closure_env#0}<hyperqueue::server::bootstrap::initialize_server::{async_fn#0}::{async_block_env#4}>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/task/local.rs:728:17
+  43:     0x55b2505cd6cc - poll<hyperqueue::server::bootstrap::initialize_server::{async_fn#0}::{async_block_env#4}>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/task/local.rs:968:9
+  44:     0x55b2505cd6cc - {async_fn#0}<hyperqueue::server::bootstrap::initialize_server::{async_fn#0}::{async_block_env#4}>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/task/local.rs:635:19
+  45:     0x55b2505cd6cc - {async_fn#0}
+                               at /__w/hyperqueue/hyperqueue/crates/hyperqueue/src/server/bootstrap.rs:368:30
+  46:     0x55b250671da5 - {async_fn#0}
+                               at /__w/hyperqueue/hyperqueue/crates/hyperqueue/src/server/bootstrap.rs:71:49
+  47:     0x55b250671da5 - {async_fn#0}
+                               at /__w/hyperqueue/hyperqueue/crates/hyperqueue/src/client/commands/server.rs:159:43
+  48:     0x55b250671da5 - {async_fn#0}
+                               at /__w/hyperqueue/hyperqueue/crates/hyperqueue/src/client/commands/server.rs:115:69
+  49:     0x55b250671da5 - {async_block#0}
+                               at /__w/hyperqueue/hyperqueue/crates/hyperqueue/src/bin/hq.rs:386:70
+  50:     0x55b25065fdfd - poll<&mut hq::main::{async_block_env#0}>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/core/src/future/future.rs:124:9
+  51:     0x55b25065fdfd - {closure#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/scheduler/current_thread/mod.rs:659:57
+  52:     0x55b25065fdfd - with_budget<core::task::poll::Poll<core::result::Result<(), hyperqueue::common::error::HqError>>, tokio::runtime::scheduler::current_thread::{impl#8}::block_on::{closure#0}::{closure#0}::{closure_env#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/coop.rs:107:5
+  53:     0x55b25065fdfd - budget<core::task::poll::Poll<core::result::Result<(), hyperqueue::common::error::HqError>>, tokio::runtime::scheduler::current_thread::{impl#8}::block_on::{closure#0}::{closure#0}::{closure_env#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/coop.rs:73:5
+  54:     0x55b25065fdfd - {closure#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/scheduler/current_thread/mod.rs:659:25
+  55:     0x55b25065fdfd - enter<core::task::poll::Poll<core::result::Result<(), hyperqueue::common::error::HqError>>, tokio::runtime::scheduler::current_thread::{impl#8}::block_on::{closure#0}::{closure_env#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/scheduler/current_thread/mod.rs:404:19
+  56:     0x55b25065fdfd - {closure#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/scheduler/current_thread/mod.rs:658:36
+  57:     0x55b25065fdfd - {closure#0}<tokio::runtime::scheduler::current_thread::{impl#8}::block_on::{closure_env#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/scheduler/current_thread/mod.rs:737:68
+  58:     0x55b25065fdfd - set<tokio::runtime::scheduler::Context, tokio::runtime::scheduler::current_thread::{impl#8}::enter::{closure_env#0}<tokio::runtime::scheduler::current_thread::{impl#8}::block_on::{closure_env#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>>, (alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>)>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/context/scoped.rs:40:9
+  59:     0x55b25065fdfd - {closure#0}<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>), tokio::runtime::scheduler::current_thread::{impl#8}::enter::{closure_env#0}<tokio::runtime::scheduler::current_thread::{impl#8}::block_on::{closure_env#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/context.rs:180:26
+  60:     0x55b25065fdfd - try_with<tokio::runtime::context::Context, tokio::runtime::context::set_scheduler::{closure_env#0}<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>), tokio::runtime::scheduler::current_thread::{impl#8}::enter::{closure_env#0}<tokio::runtime::scheduler::current_thread::{impl#8}::block_on::{closure_env#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>>>, (alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>)>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/thread/local.rs:270:16
+  61:     0x55b25065fdfd - with<tokio::runtime::context::Context, tokio::runtime::context::set_scheduler::{closure_env#0}<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>), tokio::runtime::scheduler::current_thread::{impl#8}::enter::{closure_env#0}<tokio::runtime::scheduler::current_thread::{impl#8}::block_on::{closure_env#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>>>, (alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>)>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/thread/local.rs:246:9
+  62:     0x55b25065fdfd - set_scheduler<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>), tokio::runtime::scheduler::current_thread::{impl#8}::enter::{closure_env#0}<tokio::runtime::scheduler::current_thread::{impl#8}::block_on::{closure_env#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/context.rs:180:17
+  63:     0x55b25065fdfd - enter<tokio::runtime::scheduler::current_thread::{impl#8}::block_on::{closure_env#0}<core::pin::Pin<&mut hq::main::{async_block_env#0}>>, core::option::Option<core::result::Result<(), hyperqueue::common::error::HqError>>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/scheduler/current_thread/mod.rs:737:27
+  64:     0x55b25065fdfd - block_on<core::pin::Pin<&mut hq::main::{async_block_env#0}>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/scheduler/current_thread/mod.rs:646:19
+  65:     0x55b25065fdfd - {closure#0}<hq::main::{async_block_env#0}>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/scheduler/current_thread/mod.rs:175:28
+  66:     0x55b25065fdfd - enter_runtime<tokio::runtime::scheduler::current_thread::{impl#0}::block_on::{closure_env#0}<hq::main::{async_block_env#0}>, core::result::Result<(), hyperqueue::common::error::HqError>>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/context/runtime.rs:65:16
+  67:     0x55b25065fdfd - block_on<hq::main::{async_block_env#0}>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/scheduler/current_thread/mod.rs:167:9
+  68:     0x55b25065fdfd - block_on<hq::main::{async_block_env#0}>
+                               at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.38.0/src/runtime/runtime.rs:347:47
+  69:     0x55b25065fdfd - main
+                               at /__w/hyperqueue/hyperqueue/crates/hyperqueue/src/bin/hq.rs:456:5
+  70:     0x55b2505e6d93 - call_once<fn() -> core::result::Result<(), hyperqueue::common::error::HqError>, ()>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/core/src/ops/function.rs:250:5
+  71:     0x55b2505e6d93 - __rust_begin_short_backtrace<fn() -> core::result::Result<(), hyperqueue::common::error::HqError>, core::result::Result<(), hyperqueue::common::error::HqError>>
+                               at /rustc/07dca489ac2d933c78d3c5158e3f43beefeb02ce/library/std/src/sys_common/backtrace.rs:155:18
+  72:     0x55b25067b0d0 - main
+  73:     0x7f4334be3d85 - __libc_start_main
+  74:     0x55b250595129 - <unknown>
+  75:                0x0 - <unknown>
+Oops, HyperQueue has crashed. This is a bug, sorry for that.
+If you would be so kind, please report this issue at the HQ issue tracker: https://github.com/It4innovations/hyperqueue/issues/new?title=HQ%20crashes
+Please include the above error (starting from "thread ... panicked ...") and the stack backtrace in the issue contents, along with the following information:
+
+HyperQueue version: nightly-2024-08-19-a49ef4a3870b2e3a0f1b3364c6ba36dff2d1b5d9
+
+You can also re-run HyperQueue server (and its workers) with the `RUST_LOG=hq=debug,tako=debug`
+environment variable, and attach the logs to the issue, to provide us more information.
+
+Access token found but HQ server login1.ham8.dur.ac.uk:34493 is unreachable.
+Try to (re)start the server using `hq server start`
+
+Caused by:
+    Connection refused (os error 111)
+HQ_SUBMIT_DELAY_MS set to 0
+Access token found but HQ server login1.ham8.dur.ac.uk:34493 is unreachable.
+Try to (re)start the server using `hq server start`
+
+Caused by:
+    Connection refused (os error 111)
+Waiting for job  to start.
+error: the following required arguments were not provided:
+  <SELECTOR>
+
+Usage: hq job info <SELECTOR>
+
+For more information, try '--help'.
+Wait for job status failure, status : 

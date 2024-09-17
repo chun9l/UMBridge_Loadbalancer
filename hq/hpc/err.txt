@@ -1,0 +1,226 @@
+[cn073.ham8.dur.ac.uk:645179] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308366] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308350] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308374] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308359] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308357] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308353] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308358] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308351] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308354] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308355] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308361] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308373] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308369] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308360] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308352] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn069.ham8.dur.ac.uk:1308356] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645173] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645166] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645178] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645176] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645174] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645169] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645168] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645165] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645164] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645175] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645167] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645172] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645170] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645171] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+[cn073.ham8.dur.ac.uk:645177] PMIX ERROR: ERROR in file ../../../../../../src/mca/gds/ds12/gds_ds12_lock_pthread.c at line 168
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Open MPI's OFI driver detected multiple equidistant NICs from the current process,
+but had insufficient information to ensure MPI processes fairly pick a NIC for use.
+This may negatively impact performance. A more modern PMIx server is necessary to
+resolve this issue.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 10636494.1 ON cn069 CANCELLED AT 2024-08-21T15:46:07 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
