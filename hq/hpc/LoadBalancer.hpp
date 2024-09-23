@@ -37,7 +37,7 @@ bool waitForFile(const std::string &filename)
     while (!std::filesystem::exists(filename)) {
         // If the file doesn't exist, wait for a certain period
         std::system("sync urls/");
-        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        std::this_thread::sleep_for(std::chrono::microseconds(100));
     }
 
     return true;
