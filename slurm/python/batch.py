@@ -27,11 +27,13 @@ class batch():
                  settings_dictionary = None,
                  parameter_keys      = None,
                  parameter_data      = None,
-                 batch               = False):
+                 batch               = False,
+                 sleep_time = 0.01):
         """
         Constructor for batch class.
         """
-
+        
+        self.sleep_time = sleep_time
         # Top level run directory
         self.directory = directory
 
@@ -80,7 +82,7 @@ class batch():
                         break
                     else:
                         num_active_jobs, process_ids = submission.count_active_jobs(process_ids)
-                        time.sleep(1)
+                        time.sleep(self.sleep_time)
 
 
         else:

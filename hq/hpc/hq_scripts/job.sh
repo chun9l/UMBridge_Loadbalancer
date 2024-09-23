@@ -1,7 +1,7 @@
 #! /bin/bash
 #HQ --nodes=1
-#HQ --time-limit=1m
-#HQ --time-request=1s
+#HQ --time-limit=10s
+#HQ --time-request=5s
 
 # Launch model server, send back server URL
 # and wait to ensure that HQ won't schedule any more jobs to this allocation.
@@ -34,9 +34,9 @@ module load gcc openmpi
 unset SLURM_CPU_BIND SLURM_CPU_BIND_VERBOSE SLURM_CPU_BIND_LIST SLURM_CPU_BIND_TYPE
 
 # python ~/benchmarks/models/gs2/server-fast.py & # CHANGE ME!
-python /nobackup/mghw54/y3-project/benchmarking/umbridge/servers/eigen.py &
+python /nobackup/mghw54/slurm_vs_hq/hq/servers/eigen.py &
 
-load_balancer_dir="$HOME/umbridge/hpc/" # CHANGE ME!
+load_balancer_dir="/nobackup/mghw54/slurm_vs_hq/hq/hpc/" # CHANGE ME!
 
 
 host=$(hostname -I | awk '{print $1}')

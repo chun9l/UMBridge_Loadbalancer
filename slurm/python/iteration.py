@@ -11,13 +11,15 @@ class iteration():
                  directory,
                  settings_dictionary,
                  gs2_template         = None,
-                 parameter_dictionary = None):
+                 parameter_dictionary = None,
+                 batch_file = None):
 
         # Potentially set on initialisation
         self.directory            = get_absolute_path(directory)    # Directory for this iteration
         self.gs2_template         = gs2_template                    # Template input file
         self.parameter_dictionary = parameter_dictionary            # Dictionary of parameters to change  
         self.settings_dictionary  = settings_dictionary             # Settings dictionary
+        self.batch_file = batch_file
 
         # Other data which will be set later
         self.pyro                 = None
@@ -67,6 +69,6 @@ class iteration():
 
         else:
             
-            self.process_id = submission.submit_batch_job(self.directory, self.input_file_name_short, self.settings_dictionary)
+            self.process_id = submission.submit_batch_job(self.directory, self.input_file_name_short, self.settings_dictionary, self.batch_file)
 
 

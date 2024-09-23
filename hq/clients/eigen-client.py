@@ -31,12 +31,12 @@ args = parser.parse_args()
 
 print(f"Connecting to host URL {args.url}")
 model = umbridge.HTTPModel(args.url, "posterior")
-inputs = [1 for i in range(100)]
+inputs = [i for i in range(100)]
 """
 for i in inputs:
     model(i)
 """
-with ThreadPoolExecutor() as executor:
+with ThreadPoolExecutor(max_workers=2) as executor:
     futures = {executor.submit(model, [[case]]): case for case in inputs}
 
     for future in futures:

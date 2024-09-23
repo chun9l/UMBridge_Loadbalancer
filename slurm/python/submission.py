@@ -44,7 +44,7 @@ def can_run_job(process_ids, max_jobs):
 
 # 'PUBLIC' Functions ==============================
 
-def submit_batch_job(run_directory, file_name, settings):
+def submit_batch_job(run_directory, file_name, settings, batch_file=None):
     """
     Submits a batch job to execute GS2 in run_directory
 
@@ -61,26 +61,29 @@ def submit_batch_job(run_directory, file_name, settings):
     nodes = int(cores / cores_per_node)
     if cores % cores_per_node > 0:
         nodes = nodes + 1
+    
+    if batch_file is not None:
+        target = batch_file
+    else:
+        # Filename
+        target   = run_directory + os.sep + "gs2-batch.sh"
 
-    # Filename
-    target   = run_directory + '/gs2-batch.sh'
+        # Absolute path to work directory
+        workdir = get_absolute_path(run_directory)
 
-    # Absolute path to work directory
-    workdir = get_absolute_path(run_directory)
+        # Read template batch submission script
+        fbuffer = get_dirac_submission_script()
 
-    # Read template batch submission script
-    fbuffer = get_dirac_submission_script()
+        # Modify a template SBATCH script and submit to batch system
+        fbuffer = fbuffer.replace('###NODES###',str(nodes))
+        fbuffer = fbuffer.replace('###CORES###',str(cores))
+        fbuffer = fbuffer.replace('###DIR###'  ,workdir)
+        fbuffer = fbuffer.replace('###INPUT###',file_name)
 
-    # Modify a template SBATCH script and submit to batch system
-    fbuffer = fbuffer.replace('###NODES###',str(nodes))
-    fbuffer = fbuffer.replace('###CORES###',str(cores))
-    fbuffer = fbuffer.replace('###DIR###'  ,workdir)
-    fbuffer = fbuffer.replace('###INPUT###',file_name)
+        # Write a new submission script
+        with open(target,'w') as submit:
 
-    # Write a new submission script
-    with open(target,'w') as submit:
-
-        submit.write(fbuffer)
+            submit.write(fbuffer)
 
     # Submit job and recover process ID
     cmnd   = "sbatch " + target

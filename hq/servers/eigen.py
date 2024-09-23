@@ -31,9 +31,11 @@ class Donut(umbridge.Model):
             np.random.seed(int(seed[0][0]))
 
         # Dimension for the matrix used in eigenvalue calculation    
+        print("function called")
         dimension = 100
         matrix = np.random.rand(dimension, dimension)
         eigenvalues, _ = np.linalg.eig(matrix)  # computationally expensive eigenvalue calculation  
+        print("Done")
         return [[1]] # Placeholder
 
     def supports_evaluate(self):
