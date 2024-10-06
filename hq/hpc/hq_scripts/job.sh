@@ -1,7 +1,7 @@
 #! /bin/bash
 #HQ --nodes=1
-#HQ --time-limit=10s
-#HQ --time-request=5s
+#HQ --time-limit=3m
+#HQ --time-request=30s
 
 # Launch model server, send back server URL
 # and wait to ensure that HQ won't schedule any more jobs to this allocation.
@@ -15,7 +15,7 @@ function get_avaliable_port {
     port=$(shuf -i $MIN_PORT-$MAX_PORT -n 1)
 
     # Check if the port is in use
-    while lsof -Pi :$port -sTCP:LISTEN -t >/dev/null; do
+    while lsof -Pi :$port -t > /dev/null ; do
         # If the port is in use, generate a new random port number
         port=$(shuf -i $MIN_PORT-$MAX_PORT -n 1)
     done
@@ -23,8 +23,6 @@ function get_avaliable_port {
     echo $port
 }
 
-port=$(get_avaliable_port)
-export PORT=$port
 
 # Assume that server sets the port according to the environment variable 'PORT'.
 . /home/mghw54/.bashrc
@@ -32,11 +30,14 @@ conda activate python3.9
 module load gcc openmpi
 
 unset SLURM_CPU_BIND SLURM_CPU_BIND_VERBOSE SLURM_CPU_BIND_LIST SLURM_CPU_BIND_TYPE
+export PYTHONUNBUFFERED=TRUE
 
 # python ~/benchmarks/models/gs2/server-fast.py & # CHANGE ME!
+port=$(get_avaliable_port)
+export PORT=$port
 python /nobackup/mghw54/slurm_vs_hq/hq/servers/eigen.py &
 
-load_balancer_dir="/nobackup/mghw54/slurm_vs_hq/hq/hpc/" # CHANGE ME!
+load_balancer_dir="/nobackup/mghw54/slurm_vs_hq/hq/hpc" # CHANGE ME!
 
 
 host=$(hostname -I | awk '{print $1}')
@@ -45,7 +46,7 @@ echo $host
 echo $port
 echo "Waiting for model server to respond at $host:$port..."
 while ! curl -s "http://$host:$port/Info" > /dev/null; do
-    sleep 1
+    sleep 0.01
 done
 echo "Model server responded"
 

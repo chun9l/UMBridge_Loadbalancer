@@ -6,7 +6,7 @@
 
 ./hq alloc add slurm --time-limit=00:10:00 \
                    --backlog 1 \
-                   --workers-per-alloc 2 \
-                   --max-worker-count 2 \
-                   -- -p shared --mem=2G --ntasks-per-node=1 # Add any neccessary SLURM arguments
+                   --workers-per-alloc 1 \
+                   --max-worker-count 1 \
+                   -- -p shared --mem=4G -w cn085 --ntasks-per-node=1 # Add any neccessary SLURM arguments
 # Any parameters after -- will be passed directly to sbatch (e.g. credentials, partition, mem, etc.)
