@@ -4,7 +4,7 @@ import argparse
 import json
 import umbridge
 import pytest
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def model_request(input_data):
     output = model([input_data])[0]
@@ -31,14 +31,17 @@ args = parser.parse_args()
 
 print(f"Connecting to host URL {args.url}")
 model = umbridge.HTTPModel(args.url, "posterior")
+print("here")
 inputs = [i for i in range(100)]
 """
 for i in inputs:
     model(i)
 """
-with ThreadPoolExecutor(max_workers=2) as executor:
+with ThreadPoolExecutor(max_workers=10) as executor:
     futures = {executor.submit(model, [[case]]): case for case in inputs}
-
-    for future in futures:
+    i = 0
+    for future in as_completed(futures):
         output = future.result()
+        print(f"Done {i}")
+        i += 1
 
