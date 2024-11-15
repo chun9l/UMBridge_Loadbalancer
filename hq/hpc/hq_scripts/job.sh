@@ -1,7 +1,7 @@
 #! /bin/bash
 #HQ --nodes=1
-#HQ --time-limit=3m
-#HQ --time-request=30s
+#HQ --time-limit=5m
+#HQ --time-request=1m
 
 # Launch model server, send back server URL
 # and wait to ensure that HQ won't schedule any more jobs to this allocation.
@@ -35,7 +35,9 @@ export PYTHONUNBUFFERED=TRUE
 # python ~/benchmarks/models/gs2/server-fast.py & # CHANGE ME!
 port=$(get_avaliable_port)
 export PORT=$port
-python /nobackup/mghw54/slurm_vs_hq/hq/servers/eigen.py &
+# python /nobackup/mghw54/slurm_vs_hq/hq/servers/gs2.py &
+# python /nobackup/mghw54/slurm_vs_hq/hq/servers/eigen.py &
+python /nobackup/mghw54/slurm_vs_hq/hq/servers/gp.py &
 
 load_balancer_dir="/nobackup/mghw54/slurm_vs_hq/hq/hpc" # CHANGE ME!
 

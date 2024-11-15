@@ -19,21 +19,18 @@ class Donut(umbridge.Model):
     def get_output_sizes(self, config):
         return [1]
 
-    def __call__(self, seed, config):
+    def __call__(self, dimension, config):
 
         # miscallaneous additional maths to make job more cpu intensive
         # will better display scheduler and load balancer ability,
         # as very low times are bottlenecked by the client itself
 
-        if seed == None:
-            raise Exception("Input rng seed")
-        else:
-            np.random.seed(int(seed[0][0]))
+        if dimension == None:
+            raise Exception("Input a dimension for the square matrix")
+        np.random.seed(1)
 
         # Dimension for the matrix used in eigenvalue calculation    
-        print("function called")
-        dimension = 100
-        matrix = np.random.rand(dimension, dimension)
+        matrix = np.random.rand(int(dimension[0][0]), int(dimension[0][0]))
         eigenvalues, _ = np.linalg.eig(matrix)  # computationally expensive eigenvalue calculation  
         print("Done")
         return [[1]] # Placeholder

@@ -28,7 +28,7 @@ void clear_url(std::string directory) {
 void launch_hq_with_alloc_queue() {
     std::system("./hq server stop &> /dev/null");
 
-    std::system("./hq server start --journal=eigen-test.log &"); // can add --journal for logging
+    std::system("./hq server start --journal=gp.log &"); // can add --journal for logging
     sleep(1); // Workaround: give the HQ server enough time to start.
 
     // Create HQ allocation queue

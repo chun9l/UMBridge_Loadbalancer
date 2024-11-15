@@ -49,6 +49,9 @@ std::string readUrl(const std::string &filename)
     std::string url;
     if (file.is_open())
     {
+        while (std::filesystem::is_empty(filename)) {
+          std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        }
         std::string file_contents((std::istreambuf_iterator<char>(file)),
                                   (std::istreambuf_iterator<char>()));
         url = file_contents;
@@ -174,7 +177,7 @@ private:
                 return false;
             }
 
-            sleep(1);
+            sleep(0.01);
         } while (job_status != state);
 
         return true;
