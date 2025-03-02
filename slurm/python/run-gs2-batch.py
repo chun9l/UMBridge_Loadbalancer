@@ -9,8 +9,6 @@ import os
 
 settings = generate_default_settings()
 
-# settings['ncores'] = 64
-# settings['cores_per_node'] = 64
 settings['max_runs'] = 10
 settings['test_mode'] = False
 
@@ -20,7 +18,7 @@ samples = sampler.random(n=100)
 samples_scaled = qmc.scale(samples, [0., 0., 2., 0., 0., 0., 0.], [9.0, 0.1, 9., 1., 0.3, 5., 10.])
 
 main_dir = "/nobackup/mghw54/slurm_vs_hq/slurm/gs2-10"
-Batch = batch(None, main_dir, settings, sleep_time=0.001)
+Batch = batch(main_dir, settings, sleep_time=0.001)
 
 for i in range(nsample):
     iteration_dir = f"{main_dir}/iteration_{i}/"

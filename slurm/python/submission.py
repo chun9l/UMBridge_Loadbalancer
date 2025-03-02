@@ -1,11 +1,8 @@
 # Tools for handling job submission on DIRAC
-
 import re
 import os
 import subprocess 
-import time
-from templates import get_dirac_submission_script
-from tools import get_absolute_path
+
 
 def count_active_jobs(process_ids):
     """
@@ -44,7 +41,7 @@ def can_run_job(process_ids, max_jobs):
 
 # 'PUBLIC' Functions ==============================
 
-def submit_batch_job(run_directory, file_name, settings, batch_file=None):
+def submit_batch_job(run_directory, settings, batch_file):
     """
     Submits a batch job to execute GS2 in run_directory
 
@@ -55,35 +52,9 @@ def submit_batch_job(run_directory, file_name, settings, batch_file=None):
 
     # Number of cores per job
     cores = settings['ncores']
-    cores_per_node = int(settings['cores_per_node'])
-
-    # Calculate number of nodes to use
-    nodes = int(cores / cores_per_node)
-    if cores % cores_per_node > 0:
-        nodes = nodes + 1
     
-    if batch_file is not None:
-        target = batch_file
-    else:
-        # Filename
-        target   = run_directory + os.sep + "gs2-batch.sh"
-
-        # Absolute path to work directory
-        workdir = get_absolute_path(run_directory)
-
-        # Read template batch submission script
-        fbuffer = get_dirac_submission_script()
-
-        # Modify a template SBATCH script and submit to batch system
-        fbuffer = fbuffer.replace('###NODES###',str(nodes))
-        fbuffer = fbuffer.replace('###CORES###',str(cores))
-        fbuffer = fbuffer.replace('###DIR###'  ,workdir)
-        fbuffer = fbuffer.replace('###INPUT###',file_name)
-
-        # Write a new submission script
-        with open(target,'w') as submit:
-
-            submit.write(fbuffer)
+    # Sets the path to batch file
+    target   = run_directory + os.sep + batch_file
 
     # Submit job and recover process ID
     cmnd   = "sbatch " + target

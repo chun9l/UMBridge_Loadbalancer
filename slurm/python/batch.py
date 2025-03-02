@@ -1,13 +1,9 @@
 import os
-import numpy as np
 import time
 import submission
 from iteration import iteration
 from settings import generate_default_settings
-from tools import get_iteration_count
-from tools import create_parameter_keys
-from tools import generate_parameter_dictionary
-from tools import remove_nans
+
 
 # A class for creating and interacting with a batch of GS2 runs
 # created using a template input file and a dictionary of parameter
@@ -22,12 +18,8 @@ class batch():
     """
 
     def __init__(self, 
-                 template_file,
                  directory           = './',
                  settings_dictionary = None,
-                 parameter_keys      = None,
-                 parameter_data      = None,
-                 batch               = False,
                  sleep_time = 0.01):
         """
         Constructor for batch class.
@@ -37,23 +29,11 @@ class batch():
         # Top level run directory
         self.directory = directory
 
-        # Template input file to use
-        self.template_file = template_file
-
         # Settings dict
         self.settings_dictionary = settings_dictionary
         if self.settings_dictionary is None:
             self.settings_dictionary = generate_default_settings()
 
-        # Parameter information.
-        self.parameter_keys = parameter_keys    # List of key names of parameters to vary
-        self.parameter_data = parameter_data    # Numpy array (nruns,nkeys) containing varied parameter data.
-
-        # Running under a batch system?
-        self.batch = batch
-
-        # Target names
-        self.target_names   = ['mode_frequency','growth_rate']
 
         # Number of iterations to generate
         self.n_iterations = None
@@ -61,8 +41,6 @@ class batch():
         # List of iteration objects
         self.iterations = []
 
-        # Get pyro keys dictionary
-        self.pyro_keys = create_parameter_keys()
 
     def run(self, iteration_list=None):
         """ 
@@ -70,7 +48,6 @@ class batch():
         """
         
         if iteration_list is None:
-
             process_ids = []
             for iteration in self.iterations:
                 os.chdir(iteration.directory)
@@ -84,9 +61,7 @@ class batch():
                         num_active_jobs, process_ids = submission.count_active_jobs(process_ids)
                         time.sleep(self.sleep_time)
 
-
         else:
-
             for iteration in iteration_list:
                 self.iterations[iteration].run_iteration()
 
