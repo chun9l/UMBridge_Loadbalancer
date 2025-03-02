@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse
 import umbridge
 import numpy as np
@@ -43,12 +42,3 @@ for i in range(len(param)):
     print(param[i].tolist())
     print(model([param[i].tolist()], config))
 """
-
-# Model evaluation with configuration parameters
-config={"vtk_output": True, "level": 1}
-#print(model(param, config))
-
-# If model supports Jacobian action,
-# apply Jacobian of output zero with respect to input zero to a vector
-if model.supports_apply_jacobian():
-  print(model.apply_jacobian(0, 0, param, [1.0, 4.0]))

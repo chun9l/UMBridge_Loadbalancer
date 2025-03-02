@@ -1,11 +1,8 @@
 import os
-import time
 import umbridge
 import numpy as np
 
-# Inspired by https://github.com/chi-feng/mcmc-demo
-
-class Donut(umbridge.Model):
+class Eigen(umbridge.Model):
     def __init__(self):
         super().__init__("posterior")
 
@@ -35,26 +32,7 @@ class Donut(umbridge.Model):
     def supports_evaluate(self):
         return True
 
-    def gradient(self, out_wrt, in_wrt, parameters, sens, config):
-        r = np.linalg.norm(parameters[0])
-        if (r == 0):
-            return [0,0]
-        return [sens[0] * parameters[0][0] * (Donut.radius / r - 1) * 2 / Donut.sigma2,
-                sens[0] * parameters[0][1] * (Donut.radius / r - 1) * 2 / Donut.sigma2]
 
-    def supports_gradient(self):
-        return False
-
-    def apply_jacobian(self, out_wrt, in_wrt, parameters, vec, config):
-        r = np.linalg.norm(parameters[0])
-        if (r == 0):
-            return [0]
-        return [vec[0] * parameters[0][0] * (Donut.radius / r - 1) * 2 / Donut.sigma2
-              + vec[1] * parameters[0][1] * (Donut.radius / r - 1) * 2 / Donut.sigma2]
-
-    def supports_apply_jacobian(self):
-        return False
-
-model = Donut()
+model = Eigen()
 port = int(os.getenv("PORT", 4242))
 umbridge.serve_models([model], port)

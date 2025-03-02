@@ -1,2 +1,0 @@
-[33m18:24:44 [WARNING] Python module 'omas' not found. Submodule 'jams' needs it @jams.py:14[0m
-slurmstepd: error: *** JOB 7014691 ON cn017 CANCELLED AT 2023-12-14T18:33:54 DUE TO TIME LIMIT ***

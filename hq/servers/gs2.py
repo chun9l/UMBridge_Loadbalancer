@@ -23,12 +23,6 @@ class GS2Model(umbridge.Model):
         os.system(f"cp ~/nobackup/gs2dock/usr/gs2/kbm.in .")
         pyro = Pyro(gk_file=input_file, gk_code="GS2")
         os.system("mkdir -p restart") # GS2 needs this folder otherwise will fail
-        if False: # Added to make it fast! Remove for production runs!
-            pyro.gs2_input["knobs"]["nstep"] = 50
-            pyro.gs2_input["theta_grid_parameters"]["ntheta"] = 10
-            pyro.gs2_input["theta_grid_parameters"]["nperiod"] = 2
-            pyro.gs2_input["le_grids_knobs"]["ngauss"] = 5
-            pyro.gs2_input["le_grids_knobs"]["negrid"] = 2
 
         pyro.gs2_input["species_parameters_3"]["tprim"] = float(parameters[0][6])
         pyro.gs2_input["species_parameters_3"]["vnewk"] = float(parameters[0][5])

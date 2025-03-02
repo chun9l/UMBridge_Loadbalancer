@@ -1,9 +1,5 @@
-#!/usr/bin/env python3
-import time
 import argparse
-import json
 import umbridge
-import pytest
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def model_request(input_data):
