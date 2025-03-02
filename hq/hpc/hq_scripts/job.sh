@@ -27,7 +27,7 @@ function get_avaliable_port {
 # Assume that server sets the port according to the environment variable 'PORT'.
 . /home/mghw54/.bashrc
 conda activate python3.9
-module load gcc openmpi
+# module load gcc openmpi
 
 unset SLURM_CPU_BIND SLURM_CPU_BIND_VERBOSE SLURM_CPU_BIND_LIST SLURM_CPU_BIND_TYPE
 export PYTHONUNBUFFERED=TRUE
@@ -35,9 +35,8 @@ export PYTHONUNBUFFERED=TRUE
 # python ~/benchmarks/models/gs2/server-fast.py & # CHANGE ME!
 port=$(get_avaliable_port)
 export PORT=$port
+python /nobackup/mghw54/slurm_vs_hq/hq/servers/eigen.py &
 # python /nobackup/mghw54/slurm_vs_hq/hq/servers/gs2.py &
-# python /nobackup/mghw54/slurm_vs_hq/hq/servers/eigen.py &
-python /nobackup/mghw54/slurm_vs_hq/hq/servers/gp.py &
 
 load_balancer_dir="/nobackup/mghw54/slurm_vs_hq/hq/hpc" # CHANGE ME!
 
