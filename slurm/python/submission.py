@@ -49,9 +49,6 @@ def submit_batch_job(run_directory, settings, batch_file):
     file_name     : Name of GS2 input file
     settings      : Settings dictionary
     """
-
-    # Number of cores per job
-    cores = settings['ncores']
     
     # Sets the path to batch file
     target   = run_directory + os.sep + batch_file

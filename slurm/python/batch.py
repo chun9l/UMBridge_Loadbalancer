@@ -1,8 +1,7 @@
 import os
 import time
 import submission
-from iteration import iteration
-from settings import generate_default_settings
+from tools import generate_default_settings
 
 
 # A class for creating and interacting with a batch of GS2 runs
@@ -33,10 +32,6 @@ class batch():
         self.settings_dictionary = settings_dictionary
         if self.settings_dictionary is None:
             self.settings_dictionary = generate_default_settings()
-
-
-        # Number of iterations to generate
-        self.n_iterations = None
 
         # List of iteration objects
         self.iterations = []
