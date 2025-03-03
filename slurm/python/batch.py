@@ -37,27 +37,23 @@ class batch():
         self.iterations = []
 
 
-    def run(self, iteration_list=None):
+    def run(self):
         """ 
         Submits the batch of GS2 runs.
         """
         
-        if iteration_list is None:
-            process_ids = []
-            for iteration in self.iterations:
-                os.chdir(iteration.directory)
-                print(f"changing to {iteration.directory}")
-                while True:
-                    if submission.can_run_job(process_ids, self.settings_dictionary["max_runs"]):
-                        iteration.run_iteration()
-                        process_ids.append(iteration.process_id)
-                        break
-                    else:
-                        num_active_jobs, process_ids = submission.count_active_jobs(process_ids)
-                        time.sleep(self.sleep_time)
+        process_ids = []
+        for iteration in self.iterations:
+            os.chdir(iteration.directory)
+            print(f"changing to {iteration.directory}")
+            while True:
+                if submission.can_run_job(process_ids, self.settings_dictionary["max_runs"]):
+                    iteration.run_iteration()
+                    process_ids.append(iteration.process_id)
+                    break
+                else:
+                    num_active_jobs, process_ids = submission.count_active_jobs(process_ids)
+                    time.sleep(self.sleep_time)
 
-        else:
-            for iteration in iteration_list:
-                self.iterations[iteration].run_iteration()
 
 
