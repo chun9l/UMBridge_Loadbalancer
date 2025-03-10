@@ -1,6 +1,6 @@
 #! /bin/bash
 
-#SBATCH --partition=devel
+#SBATCH --partition=shared
 #SBATCH --ntasks=1
 #SBATCH --time=00:05:00
 
@@ -29,7 +29,7 @@ export PORT=$port
 
 # Assume that server sets the port according to the environment variable 'PORT'.
 # Otherwise the job script will be stuck waiting for model server's response.
-./testmodel & # CHANGE ME!
+/nobackup/mghw54/slurm_vs_hq/umbridge/slurm/servers/eigen.py & # CHANGE ME!
 
 
 host=$(hostname -I | awk '{print $1}')

@@ -14,20 +14,19 @@ class Eigen(umbridge.Model):
         return [1]
 
     def __call__(self, dimension, config):
-
-        # miscallaneous additional maths to make job more cpu intensive
-        # will better display scheduler and load balancer ability,
-        # as very low times are bottlenecked by the client itself
-
         if dimension == None:
             raise Exception("Input a dimension for the square matrix")
         np.random.seed(1)
+
+        iteration = config.get("iteration")
+        os.chdir("/nobackup/mghw54/slurm_vs_hq/umbridge/slurm/eigen-100")
+        os.system(f"mkdir -p iteration{iteration}")
 
         # Dimension for the matrix used in eigenvalue calculation    
         matrix = np.random.rand(int(dimension[0][0]), int(dimension[0][0]))
         eigenvalues, _ = np.linalg.eig(matrix)  # computationally expensive eigenvalue calculation  
         print("Done")
-        return [[1]] # Placeholder
+        return [[1]] # Placeholder since we are not interested in the outcome 
 
     def supports_evaluate(self):
         return True
