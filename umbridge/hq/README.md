@@ -33,3 +33,5 @@ The load balancer is primarily intended to run on a login node.
 5. **Connect from client**
 
    Once running, you can connect to the load balancer from any UM-Bridge client on the login node via `http://localhost:4242`. To the client, it will appear like any other UM-Bridge server, except that it can process concurrent evaluation requests.
+
+HQ will generate many job folders to hold the job outputs, but they are not useful for our purpose. The timings are piped from the hq command which can be modified in the `loadbalancer.cpp` file.

@@ -4,4 +4,13 @@ We recommend creating a new directory for each testcase you run as we will gener
 
 The scripts that run the benchmarks are named "run-*-batch.py". It streamlines the process of submitting SLURM jobs, you can specify your batch file in there and how many concurrent jobs allowed in the queue. Note that you will need to build GS2 for its benchmark.
 
+You need to modify the SLURM scripts accordingly to satisfy your system.
+
+To run your code:
+
+``` 
+python run-*-batch.py
+```
+
+
 settings is a dictionary which you can set the maximum allowed concurrent jobs and whether you want to run it in test mode (without actually submitting jobs).
