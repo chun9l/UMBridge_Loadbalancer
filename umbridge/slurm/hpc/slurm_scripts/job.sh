@@ -1,8 +1,10 @@
 #! /bin/bash
 
-#SBATCH --partition=shared
+#SBATCH --partition=test
 #SBATCH --ntasks=1
-#SBATCH --time=00:05:00
+#SBATCH --time=00:01:00
+#SBATCH --output=../eigen-100/slurm-%j.out
+#SBATCH --error=../eigen-100/slurm-%j.out
 
 
 # Launch model server, send back server URL and wait so that SLURM does not cancel the allocation.
@@ -27,9 +29,13 @@ function get_available_port {
 port=$(get_available_port)
 export PORT=$port
 
+export PYTHONUNBUFFERED=TRUE
+
 # Assume that server sets the port according to the environment variable 'PORT'.
 # Otherwise the job script will be stuck waiting for model server's response.
-/nobackup/mghw54/slurm_vs_hq/umbridge/slurm/servers/eigen.py & # CHANGE ME!
+. /home/mghw54/.bashrc
+conda activate python3.9
+python /nobackup/mghw54/slurm_vs_hq/umbridge/slurm/servers/eigen.py & # CHANGE ME!
 
 
 host=$(hostname -I | awk '{print $1}')

@@ -6,7 +6,7 @@
 # Launch model server, send back server URL
 # and wait to ensure that HQ won't schedule any more jobs to this allocation.
 
-function get_avaliable_port {
+function get_available_port {
     # Define the range of ports to select from
     MIN_PORT=1024
     MAX_PORT=65535
@@ -15,7 +15,7 @@ function get_avaliable_port {
     port=$(shuf -i $MIN_PORT-$MAX_PORT -n 1)
 
     # Check if the port is in use
-    while lsof -Pi :$port -t > /dev/null ; do
+    until ./is_port_free $port; do
         # If the port is in use, generate a new random port number
         port=$(shuf -i $MIN_PORT-$MAX_PORT -n 1)
     done
@@ -33,13 +33,10 @@ unset SLURM_CPU_BIND SLURM_CPU_BIND_VERBOSE SLURM_CPU_BIND_LIST SLURM_CPU_BIND_T
 export PYTHONUNBUFFERED=TRUE
 
 # python ~/benchmarks/models/gs2/server-fast.py & # CHANGE ME!
-port=$(get_avaliable_port)
+port=$(get_available_port)
 export PORT=$port
-python /nobackup/mghw54/slurm_vs_hq/hq/servers/eigen.py &
+python /nobackup/mghw54/slurm_vs_hq/umbridge/hq/servers/eigen.py &
 # python /nobackup/mghw54/slurm_vs_hq/hq/servers/gs2.py &
-
-load_balancer_dir="/nobackup/mghw54/slurm_vs_hq/hq/hpc" # CHANGE ME!
-
 
 host=$(hostname -I | awk '{print $1}')
 
@@ -52,7 +49,7 @@ done
 echo "Model server responded"
 
 # Write server URL to file identified by HQ job ID.
-mkdir -p "$load_balancer_dir/urls"
-echo "http://$host:$port" > "$load_balancer_dir/urls/url-$HQ_JOB_ID.txt"
+mkdir -p $UMBRIDGE_LOADBALANCER_COMM_FILEDIR
+echo "http://$host:$port" > "$UMBRIDGE_LOADBALANCER_COMM_FILEDIR/url-$HQ_JOB_ID.txt"
 
 sleep infinity # keep the job occupied

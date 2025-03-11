@@ -19,8 +19,10 @@ class Eigen(umbridge.Model):
         np.random.seed(1)
 
         iteration = config.get("iteration")
-        os.chdir("/nobackup/mghw54/slurm_vs_hq/umbridge/slurm/eigen-100")
-        os.system(f"mkdir -p iteration{iteration}")
+
+        main_dir = "/nobackup/mghw54/slurm_vs_hq/umbridge/slurm"
+        iter_dir = main_dir + os.sep + f"eigen-{int(dimension[0][0])}" + os.sep + f"iteration{iteration}"
+        os.system(f"mkdir -p {iter_dir}")
 
         # Dimension for the matrix used in eigenvalue calculation    
         matrix = np.random.rand(int(dimension[0][0]), int(dimension[0][0]))
