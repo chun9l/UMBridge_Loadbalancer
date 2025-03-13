@@ -1,10 +1,11 @@
 #! /bin/bash
 
-#SBATCH --partition=test
-#SBATCH --ntasks=1
-#SBATCH --time=00:01:00
-#SBATCH --output=../eigen-100/slurm-%j.out
-#SBATCH --error=../eigen-100/slurm-%j.out
+#SBATCH --partition=shared
+#SBATCH --ntasks=8
+#SBATCH --mem=32G
+#SBATCH --time=04:00:00
+#SBATCH --output=../10jobs/gs2/slurm-%j.out
+#SBATCH --error=../10jobs/gs2/slurm-%j.out
 
 
 # Launch model server, send back server URL and wait so that SLURM does not cancel the allocation.
@@ -35,7 +36,8 @@ export PYTHONUNBUFFERED=TRUE
 # Otherwise the job script will be stuck waiting for model server's response.
 . /home/mghw54/.bashrc
 conda activate python3.9
-python /nobackup/mghw54/slurm_vs_hq/umbridge/slurm/servers/eigen.py & # CHANGE ME!
+module load gcc openmpi
+python /nobackup/mghw54/slurm_vs_hq/umbridge/slurm/servers/gs2.py & # CHANGE ME!
 
 
 host=$(hostname -I | awk '{print $1}')

@@ -17,7 +17,7 @@ class GS2Model(umbridge.Model):
     def __call__(self, parameters, config):
         iteration = config.get("iteration")
         input_file = "kbm.in" # Select input file
-        os.chdir("/nobackup/mghw54/slurm_vs_hq/hq/usecase")
+        os.chdir("/nobackup/mghw54/slurm_vs_hq/umbridge/slurm/10jobs/gs2")
         os.system(f"mkdir -p iteration{iteration}")
         os.chdir(f"iteration{iteration}")
         os.system(f"cp ~/nobackup/gs2dock/usr/gs2/kbm.in .")
@@ -37,7 +37,7 @@ class GS2Model(umbridge.Model):
         # Run the model 
         # mpirank = config.get("ranks", 1)
         # os.system(f"sbatch -W /nobackup/mghw54/gs2dock/usr/gs2/gs2-batch.sh iteration{iteration}") # --allow-run-as-root to suppress OMPI error, not reccomended when running outside of docker!
-        os.system(f"srun --quit-on-interrupt --mpi=pmix_v3 -n8 --nodes=1 singularity run --bind $TMPDIR ~/nobackup/gs2dock /usr/gs2/bin/gs2 {input_file}")
+        os.system(f"mpirun -n 8 singularity run --bind $TMPDIR ~/nobackup/gs2dock /usr/gs2/bin/gs2 {input_file}")
         
         # Read results and print output
         pyro = Pyro(gk_file=input_file, gk_code="GS2")
@@ -47,7 +47,7 @@ class GS2Model(umbridge.Model):
         growth_rate = data["growth_rate"].isel(time=-1)
         # mode_freq = data["mode_frequency"].isel(time=-1)
         output = [[growth_rate.to_numpy().squeeze().tolist(), heat.to_numpy().squeeze().tolist()]]
-        return output 
+        return [[1, 1]] # Placeholder since we don't care 
 
     def supports_evaluate(self):
         return True
