@@ -4,6 +4,6 @@ We provide both the code and data for reproducibility. The code are located in t
 
 You can find our paper here: 
 
-The UM-Bridge repo can be found here:
+This repo is meant to be fairly self-contained. More information about UM-Bridge can be found in the main repo:
 
 Please cite our work if you found it relevant!

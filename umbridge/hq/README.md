@@ -12,8 +12,6 @@ The load balancer is primarily intended to run on a login node.
 
    Adapt the configuration in ``hpc/hq_scripts/allocation_queue.sh`` to your needs. You can find the configurable options in the HyperQueue documentation.
 
-   For example, when running a very fast UM-Bridge model on an HPC cluster, it is advisable to choose medium-sized jobs for resource allocation. That will avoid submitting large numbers of jobs to the HPC system's scheduler, while HyperQueue itself will handle large numbers of small model runs within those allocated jobs.
-
 2. **Configure model job**
 
    Adapt the configuration in ``hpc/hq_scripts/job.sh`` to your needs:
@@ -22,16 +20,25 @@ The load balancer is primarily intended to run on a login node.
 
    Importantly, the UM-Bridge model server must serve its models at the port specified by the environment variable `PORT`. The value of `PORT` is automatically determined by `job.sh`, avoiding potential conflicts if multiple servers run on the same compute node.
 
+   **Timing logs**
+   
+   HQ provides a flag to record job metadata. This needs to be modified in the LoadBalancer.cpp file at the line with `./hq server start --journal=<log_name>`. Remember to recompile after changing this.
+
 4. **Run load balancer**
 
    Navigate to the `hpc` directory and execute the load balancer.
 
    ```
-   ./load-balancer
+   ./load-balancer --scheduler=hyperqueue --port=<port>
    ```
 
 5. **Connect from client**
 
-   Once running, you can connect to the load balancer from any UM-Bridge client on the login node via `http://localhost:4242`. To the client, it will appear like any other UM-Bridge server, except that it can process concurrent evaluation requests.
+   Once running, you can connect to the load balancer from any UM-Bridge client on the login node via `http://localhost:<port>`. The `max_workers` parameter in the client needs to match the number of parallel servers running. 
 
-HQ will generate many job folders to hold the job outputs, but they are not useful for our purpose. The timings are piped from the hq command which can be modified in the `loadbalancer.cpp` file.
+   **Extract job timings**
+
+   HQ will generate many job folders to hold the job outputs, but they are not useful for the purpose of this work. The job logs stored in `<log_name>` needs some postprocessing. This can be done by running `./hq event-log export <log_name> > <processed_log>`, and follow by `job-time-hq.py`. You need to modify the latter Python script with an appropriate file path.
+
+   **Plotting**
+   We provide Python scripts to plot the times extracted in the previous step.
