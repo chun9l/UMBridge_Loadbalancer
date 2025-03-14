@@ -8,10 +8,11 @@ import re
 
 def extract_times(run_dir, run_name):
     data = {}
-    with open(f"{run_dir}/{run_name}-slurm-um.json", "r") as h:
+    with open(f"{run_dir}/{run_name}_slurm_um.json", "r") as h:
         json_data = json.load(h)
     for i in json_data:
         job = json_data[i]["jobs"][0]
+        job_id = job["job_id"]
         cpu_cores = int(job["required"]["CPUs"])
         submit = job["time"]["submission"]
         start = job["time"]["start"]
@@ -34,12 +35,12 @@ def extract_times(run_dir, run_name):
         except:
             print(job_id, submit, start, end, job_steps)
 
-    with open(f"{run_dir}/{run_name}-slurm-um.pkl", "wb") as h:
+    with open(f"{run_dir}/{run_name}_slurm_um.pkl", "wb") as h:
         pickle.dump(data, h)
 
 
 def create_json(run_dir, run_name):
-    if os.path.isfile(f"{run_dir}/{run_name}-slurm-um.json"):
+    if os.path.isfile(f"{run_dir}/{run_name}_slurm_um.json"):
         print(f"{run_name}-slurm-um.json exists! Skipping json creation")
     else:
         main_dir = f"{run_dir}/{run_name}"
@@ -54,7 +55,7 @@ def create_json(run_dir, run_name):
             json_data = json.loads(output.stdout.decode("utf-8"))
             json_dict[str(iteration)] = json_data
             iteration += 1
-        with open(f"{run_dir}/{run_name}-slurm-um.json", "w") as h:
+        with open(f"{run_dir}/{run_name}_slurm_um.json", "w") as h:
             h.write(json.dumps(json_dict))
 
 run_dir = "2jobs"

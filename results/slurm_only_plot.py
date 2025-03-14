@@ -15,19 +15,19 @@ def set_fill_color(bp, color):
 
 
 for s in scheduler:
-    data_dict[s] = {}
     s = s.lower()
-    if s == "slurm_um":
-        os.chdir(f"./raw_data/umbridge/{s}")
-    else:
-        os.chdir(f"./raw_data/{s}")
+    data_dict[s] = {}
     for job in job_count:
         data_dict[s][job] = {}
+        if s == "slurm_um":
+            os.chdir(f"/home/ming/slurm_vs_hq/results/raw_data/umbridge/{s}/{job}jobs")
+        else:
+            os.chdir(f"/home/ming/slurm_vs_hq/results/raw_data/{s}/{job}jobs")
         for m in range(len(metrics)):
             data_dict[s][job][metrics[m]] = {}
             for app in benchmark:
-                file = f"{app}-{s}.pkl"
-                with open(f"{app}-{s}.pkl", "rb") as h:
+                file = f"{app}_{s}.pkl"
+                with open(f"{app}_{s}.pkl", "rb") as h:
                     data = pickle.load(h)
                 if m == 0:
                     metric = "makespan"
@@ -56,9 +56,9 @@ for i in range(len(metrics)):
                         medianprops={"linestyle": "-", "color": "black", "linewidth": "1.5"})
         ax.set_xticks(range(0, len(benchmark) * 2, 2), benchmark)
         set_fill_color(slurm, "blue")
-        set_fill_color(slurm_um, "red")
+        set_fill_color(slurm_um, "darkviolet")
         plt.plot([], 'b-', linewidth=1, label="SLURM")
-        plt.plot([], 'r-', linewidth=1, label="SLURM_UM")
+        plt.plot([], '-', color='darkviolet', linewidth=1, label="SLURM_UM")
         plt.plot([], 'k-', linewidth=1.5, label="Median")
         plt.plot([], 'k--', linewidth=1.5, label="Mean")
         plt.plot([], 'ko', markerfacecolor='white', label="Fliers")

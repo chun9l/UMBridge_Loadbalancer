@@ -23,8 +23,8 @@ for s in scheduler:
         for m in range(len(metrics)):
             data_dict[s][job][metrics[m]] = {}
             for app in benchmark:
-                file = f"{app}-{s}.pkl"
-                with open(f"{app}-{s}.pkl", "rb") as h:
+                file = f"{app}_{s}.pkl"
+                with open(f"{app}_{s}.pkl", "rb") as h:
                     data = pickle.load(h)
                 if m == 0:
                     metric = "makespan"

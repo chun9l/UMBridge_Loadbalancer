@@ -42,7 +42,7 @@ def extract_times(run_dir, run_name, iterations=None):
         data[i].update({"makespan": makespan, "lag": makespan - canceled + start, "cpu-time": cpu_time, "slr": makespan / cpu_time})
         
 
-    with open(f"{run_dir}/{run_name}-hq.pkl", "wb") as file:
+    with open(f"{run_dir}/{run_name}_hq.pkl", "wb") as file:
         pickle.dump(data, file)
 
 
