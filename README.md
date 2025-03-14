@@ -4,6 +4,6 @@ We provide both the code and data for reproducibility. The code are located in t
 
 You can find our paper here: 
 
-This repo is meant to be fairly self-contained. More information about UM-Bridge can be found in the main repo:
+This repo is meant to be fairly self-contained. More information about UM-Bridge can be found in the main repo: <https://github.com/UM-Bridge/umbridge/tree/main>. Alternatively, feel free to email the main author (Chung: chung.m.loi@durham.ac.uk) for any questions!
 
 Please cite our work if you found it relevant!
