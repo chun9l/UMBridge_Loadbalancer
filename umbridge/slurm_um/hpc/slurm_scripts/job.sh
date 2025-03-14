@@ -37,7 +37,7 @@ export PYTHONUNBUFFERED=TRUE
 . /home/mghw54/.bashrc
 conda activate python3.9
 module load gcc openmpi
-python /nobackup/mghw54/slurm_vs_hq/umbridge/slurm_um/servers/gs2.py & # CHANGE ME!
+python /nobackup/mghw54/UMBridge_Loadbalancer/umbridge/slurm_um/servers/gs2.py & # CHANGE ME!
 
 
 host=$(hostname -I | awk '{print $1}')

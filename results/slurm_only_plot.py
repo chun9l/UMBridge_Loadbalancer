@@ -20,9 +20,9 @@ for s in scheduler:
     for job in job_count:
         data_dict[s][job] = {}
         if s == "slurm_um":
-            os.chdir(f"/home/ming/slurm_vs_hq/results/raw_data/umbridge/{s}/{job}jobs")
+            os.chdir(f"/home/ming/UMBridge_Loadbalancer/results/raw_data/umbridge/{s}/{job}jobs")
         else:
-            os.chdir(f"/home/ming/slurm_vs_hq/results/raw_data/{s}/{job}jobs")
+            os.chdir(f"/home/ming/UMBridge_Loadbalancer/results/raw_data/{s}/{job}jobs")
         for m in range(len(metrics)):
             data_dict[s][job][metrics[m]] = {}
             for app in benchmark:
@@ -65,4 +65,4 @@ for i in range(len(metrics)):
         if metrics[i] != "SLR":  ax.set_yscale("log")
         plt.legend()
         # plt.show()
-        plt.savefig(f"/home/ming/slurm_vs_hq/results/plots/slurm/{metrics[i]}_{job}.pdf", format="pdf")
+        plt.savefig(f"/home/ming/UMBridge_Loadbalancer/results/plots/slurm/{metrics[i]}_{job}.pdf", format="pdf")

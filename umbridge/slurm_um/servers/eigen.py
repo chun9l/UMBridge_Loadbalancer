@@ -20,7 +20,7 @@ class Eigen(umbridge.Model):
 
         iteration = config.get("iteration")
 
-        main_dir = "/nobackup/mghw54/slurm_vs_hq/umbridge/slurm_um"
+        main_dir = "/nobackup/mghw54/UMBridge_Loadbalancer/umbridge/slurm_um"
         iter_dir = main_dir + os.sep + f"eigen_{int(dimension[0][0])}" + os.sep + f"iteration{iteration}"
         os.system(f"mkdir -p {iter_dir}")
 

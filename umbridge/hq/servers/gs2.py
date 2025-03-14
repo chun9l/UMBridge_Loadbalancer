@@ -17,7 +17,7 @@ class GS2Model(umbridge.Model):
     def __call__(self, parameters, config):
         iteration = config.get("iteration")
         input_file = "kbm.in" # Select input file
-        os.chdir("/nobackup/mghw54/slurm_vs_hq/umbridge/hq/")
+        os.chdir("/nobackup/mghw54/UMBridge_Loadbalancer/umbridge/hq/")
         os.system(f"mkdir -p iteration{iteration}")
         os.chdir(f"iteration{iteration}")
         os.system(f"cp ~/nobackup/gs2dock/usr/gs2/kbm.in .")

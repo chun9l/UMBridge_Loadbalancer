@@ -35,7 +35,7 @@ for s in scheduler:
                 elif m == 3:
                     metric = "slr"
                 data_dict[s][job][metrics[m]][app] = [data[i][metric] for i in data]
-os.chdir("/home/ming/slurm_vs_hq/")
+os.chdir("/home/ming/UMBridge_Loadbalancer/")
 for i in range(len(metrics)):
     for job in job_count:
         fig, ax = plt.subplots()

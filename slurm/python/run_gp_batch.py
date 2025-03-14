@@ -12,7 +12,7 @@ settings['test_mode'] = False
 
 nsample = 100
 
-main_dir = f"/nobackup/mghw54/slurm_vs_hq/slurm/{settings['max_runs']}jobs/gp"
+main_dir = f"/nobackup/mghw54/UMBridge_Loadbalancer/slurm/{settings['max_runs']}jobs/gp"
 Batch = batch(None, main_dir, settings, sleep_time=0.0005)
 
 valData = pd.read_csv("validationData.csv")

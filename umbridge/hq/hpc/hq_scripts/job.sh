@@ -34,8 +34,8 @@ export PYTHONUNBUFFERED=TRUE
 
 port=$(get_available_port)
 export PORT=$port
-python /nobackup/mghw54/slurm_vs_hq/umbridge/hq/servers/eigen.py &
-# python /nobackup/mghw54/slurm_vs_hq/umbridge/hq/servers/gs2.py &
+python /nobackup/mghw54/UMBridge_Loadbalancer/umbridge/hq/servers/eigen.py &
+# python /nobackup/mghw54/UMBridge_Loadbalancer/umbridge/hq/servers/gs2.py &
 
 host=$(hostname -I | awk '{print $1}')
 

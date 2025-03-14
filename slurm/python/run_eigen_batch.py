@@ -13,7 +13,7 @@ settings['test_mode'] = False
 nsample = 100
 dimension = 5000
 
-main_dir = f"/nobackup/mghw54/slurm_vs_hq/slurm/{settings['max_runs']}jobs/eigen_{dimension}"
+main_dir = f"/nobackup/mghw54/UMBridge_Loadbalancer/slurm/{settings['max_runs']}jobs/eigen_{dimension}"
 Batch = batch(None, main_dir, settings, sleep_time=0.0005)
 
 os.system(f"cp eigen_batch.sh {main_dir}")
