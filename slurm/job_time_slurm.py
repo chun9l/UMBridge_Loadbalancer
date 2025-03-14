@@ -32,7 +32,7 @@ def extract_times(run_dir, run_name):
         try:
             data[str(i)] = {"makespan": makespan, "cpu-time": job_steps, "lag": lag, "slr": slr}
         except:
-            print(job_id, submit, start, end, job_steps)
+            print(job, submit, start, end, job_steps)
 
     with open(f"{run_dir}/{run_name}-slurm.pkl", "wb") as h:
         pickle.dump(data, h)

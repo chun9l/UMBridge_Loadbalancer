@@ -5,7 +5,7 @@ import os
 
 job_count = ["2", "10"]
 scheduler = ["SLURM", "HQ"]
-benchmark = ["eigen-100", "eigen-5000", "gs2", "gp"]
+benchmark = ["eigen_100", "eigen_5000", "gs2", "gp"]
 metrics = ["makespan", "CPUTime", "Scheduler Overhead", "SLR"]
 data_dict = {}
 

@@ -40,7 +40,7 @@ def extract_times(run_dir, run_name):
 
 def create_json(run_dir, run_name):
     if os.path.isfile(f"{run_dir}/{run_name}-slurm-um.json"):
-        print(f"{run_name}-slurm.json exists! Skipping json creation")
+        print(f"{run_name}-slurm-um.json exists! Skipping json creation")
     else:
         main_dir = f"{run_dir}/{run_name}"
 
