@@ -48,10 +48,10 @@ for i in range(len(metrics)):
             ax.set_ylabel("Arbitrary units")
         data_slurm = [data_dict[scheduler[0].lower()][job][metrics[i]][app] for app in benchmark]
         data_slurm_um = [data_dict[scheduler[1].lower()][job][metrics[i]][app] for app in benchmark]
-        slurm = ax.boxplot(data_slurm, positions=np.array(range(len(data_slurm))) * 2 - 0.4, meanline=True,
+        slurm = ax.boxplot(data_slurm, positions=np.array(range(len(data_slurm))) * 2 - 0.15, meanline=True,
                            showmeans=True, meanprops={"linestyle": "--", "color": "black", "linewidth": "1.5"},
                            medianprops={"linestyle": "-", "color": "black", "linewidth": "1.5"})
-        slurm_um = ax.boxplot(data_slurm_um, positions=np.array(range(len(data_slurm_um))) * 2.0 + 0.4, meanline=True, showmeans=True,
+        slurm_um = ax.boxplot(data_slurm_um, positions=np.array(range(len(data_slurm_um))) * 2.0 + 0.15, meanline=True, showmeans=True,
                         meanprops={"linestyle": "--", "color": "black", "linewidth": "1.5"},
                         medianprops={"linestyle": "-", "color": "black", "linewidth": "1.5"})
         ax.set_xticks(range(0, len(benchmark) * 2, 2), benchmark)
