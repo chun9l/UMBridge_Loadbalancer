@@ -7,8 +7,6 @@ import os
 
 settings = generate_default_settings()
 
-settings['ncores'] = 1
-settings['cores_per_node'] = 1
 settings['max_runs'] = 10
 settings['test_mode'] = False
 
@@ -24,18 +22,18 @@ param = targets.to_numpy()[:nsample, :]
 for i in range(nsample):
     iteration_dir = f"{main_dir}/iteration_{i}"
     os.system(f"mkdir -p {iteration_dir}")
-    os.system(f"cp gp-batch.sh {iteration_dir}")
+    os.system(f"cp gp_batch.sh {iteration_dir}")
     os.system(f"cp gp.py {iteration_dir}")
-    with open(f"{iteration_dir}/gp-batch.sh", "r") as h:
+    with open(f"{iteration_dir}/gp_batch.sh", "r") as h:
         filedata = h.read()
     
     input_str = " ".join(str(i) for i in list(param[i]))
     filedata = filedata.replace("###INPUT###", input_str)
 
-    with open(f"{iteration_dir}/gp-batch.sh", "w") as h:
+    with open(f"{iteration_dir}/gp_batch.sh", "w") as h:
         h.write(filedata)
 
-    Batch.iterations.append(iteration(iteration_dir, settings, batch_file=f"{iteration_dir}/gp-batch.sh"))
+    Batch.iterations.append(iteration(iteration_dir, settings, batch_file=f"{iteration_dir}/gp_batch.sh"))
 
 
 

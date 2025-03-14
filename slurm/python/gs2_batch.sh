@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -p shared
-#SBATCH -J eigen
+#SBATCH -J gs2
 #SBATCH -N 1
 #SBATCH --time=4:00:00
 #SBATCH --mem=32G

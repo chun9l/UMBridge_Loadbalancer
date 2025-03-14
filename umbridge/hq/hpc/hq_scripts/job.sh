@@ -32,11 +32,10 @@ conda activate python3.9
 unset SLURM_CPU_BIND SLURM_CPU_BIND_VERBOSE SLURM_CPU_BIND_LIST SLURM_CPU_BIND_TYPE
 export PYTHONUNBUFFERED=TRUE
 
-# python ~/benchmarks/models/gs2/server-fast.py & # CHANGE ME!
 port=$(get_available_port)
 export PORT=$port
 python /nobackup/mghw54/slurm_vs_hq/umbridge/hq/servers/eigen.py &
-# python /nobackup/mghw54/slurm_vs_hq/hq/servers/gs2.py &
+# python /nobackup/mghw54/slurm_vs_hq/umbridge/hq/servers/gs2.py &
 
 host=$(hostname -I | awk '{print $1}')
 
