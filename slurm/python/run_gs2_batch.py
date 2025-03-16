@@ -13,7 +13,7 @@ settings['test_mode'] = True
 nsample = 100
 sampler = qmc.LatinHypercube(d=7, seed=1)
 samples = sampler.random(n=100)
-samples_scaled = qmc.scale(samples, [0., 0., 2., 0., 0., 0., 0.], [9.0, 0.1, 9., 1., 0.3, 5., 10.])
+samples_scaled = qmc.scale(samples, [0., 0., 2., 0., 0., 0., 0.], [9.0, 0.1, 9., 1., 0.3, 5., 10.]) # tprim, vnewk, qinp, aky, beta, shat, fprim
 
 main_dir = f"/nobackup/mghw54/UMBridge_Loadbalancer/slurm/{settings['max_runs']}jobs/gs2"
 Batch = batch(main_dir, settings, sleep_time=0.001)

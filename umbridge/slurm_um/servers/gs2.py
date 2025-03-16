@@ -24,13 +24,13 @@ class GS2Model(umbridge.Model):
         pyro = Pyro(gk_file=input_file, gk_code="GS2")
         os.system("mkdir -p restart") # GS2 needs this folder otherwise will fail
 
-        pyro.gs2_input["species_parameters_3"]["tprim"] = float(parameters[0][6])
-        pyro.gs2_input["species_parameters_3"]["vnewk"] = float(parameters[0][5])
-        pyro.gs2_input["theta_grid_parameters"]["qinp"] = float(parameters[0][1])
-        pyro.gs2_input["kt_grids_single_parameters"]["aky"] = float(parameters[0][0])
+        pyro.gs2_input["species_parameters_3"]["tprim"] = float(parameters[0][0])
+        pyro.gs2_input["species_parameters_3"]["vnewk"] = float(parameters[0][1])
+        pyro.gs2_input["theta_grid_parameters"]["qinp"] = float(parameters[0][2])
+        pyro.gs2_input["kt_grids_single_parameters"]["aky"] = float(parameters[0][3])
         pyro.gs2_input["parameters"]["beta"] = float(parameters[0][4])
-        pyro.gs2_input["theta_grid_eik_knobs"]["s_hat_input"] = float(parameters[0][2])
-        pyro.gs2_input["species_parameters_3"]["fprim"] = float(parameters[0][3])
+        pyro.gs2_input["theta_grid_eik_knobs"]["s_hat_input"] = float(parameters[0][5])
+        pyro.gs2_input["species_parameters_3"]["fprim"] = float(parameters[0][6])
         pyro.gk_input.data = pyro.gs2_input
         pyro.gk_input.write(input_file)
         
