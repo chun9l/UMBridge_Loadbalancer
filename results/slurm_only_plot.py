@@ -64,5 +64,5 @@ for i in range(len(metrics)):
         plt.plot([], 'ko', markerfacecolor='white', label="Fliers")
         if metrics[i] != "SLR":  ax.set_yscale("log")
         plt.legend()
-        plt.show()
-        # plt.savefig(f"/home/ming/UMBridge_Loadbalancer/results/plots/slurm/{metrics[i]}_{job}.pdf", format="pdf")
+        # plt.show()
+        plt.savefig(f"/home/ming/UMBridge_Loadbalancer/results/plots/slurm_vs_slurm_um/{metrics[i]}_{job}.pdf", format="pdf")
