@@ -26,7 +26,7 @@ sampler = qmc.LatinHypercube(d=7, seed=1)
 sample = sampler.random(n=100)
 param = qmc.scale(sample, [0.0, 0.0, 2.0, 0.0, 0., 0., 0.], [9., 0.1, 9., 1., 0.3, 5., 10.]) # tprim, vnewk, qinp, aky, beta, shat, fprim
 
-with ThreadPoolExecutor(max_workers=10) as executor:
+with ThreadPoolExecutor(max_workers=2) as executor:
     futures = {executor.submit(model, [param[i].tolist()], {"iteration": i}): i for i in range(len(param))}
     i = 0
     for future in as_completed(futures):

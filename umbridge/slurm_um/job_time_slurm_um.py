@@ -62,7 +62,7 @@ def create_json(run_dir, run_name):
         with open(f"{run_dir}/{run_name}_slurm_um.json", "w") as h:
             h.write(json.dumps(json_dict))
 
-run_dir = "./10jobs/"
+run_dir = "./2jobs/"
 run_name = "gs2"
 
 create_json(run_dir, run_name)

@@ -4,8 +4,8 @@
 #SBATCH --ntasks=8
 #SBATCH --mem=32G
 #SBATCH --time=04:00:00
-#SBATCH --output=../10jobs/gs2/slurm-%j.out
-#SBATCH --error=../10jobs/gs2/slurm-%j.out
+#SBATCH --output=../2jobs/gs2/slurm-%j.out
+#SBATCH --error=../2jobs/gs2/slurm-%j.out
 
 
 # Launch model server, send back server URL and wait so that SLURM does not cancel the allocation.
